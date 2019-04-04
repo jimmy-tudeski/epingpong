@@ -1,9 +1,8 @@
 const Koa = require('koa')
+const initHandlers = require('./middlewares/initHandlers')
 
 const app = new Koa()
 
-app.use(async (ctx, next) => {
-	ctx.body = 'Ping Pong!'
-})
+initHandlers(app)
 
 module.exports = app
